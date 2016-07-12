@@ -1,4 +1,4 @@
-setwd("M:\\SOBI\\R\\EXERCISES")
+setwd("M:\\DIRX\\R\\EXERCISES")
 
 library(sqldf)
 
@@ -8,18 +8,18 @@ library(plyr)
 
 
 #Loading features and activity labels
-features<-read.csv("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\features.txt",stringsAsFactors=FALSE,header = FALSE,sep = " ")
-activity_labels<-read.csv("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\activity_labels.txt",stringsAsFactors=FALSE,header = FALSE,sep = " ")
+features<-read.csv("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\features.txt",stringsAsFactors=FALSE,header = FALSE,sep = " ")
+activity_labels<-read.csv("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\activity_labels.txt",stringsAsFactors=FALSE,header = FALSE,sep = " ")
 
 #Load test data
-X_test<-read.table("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\test\\X_test.txt",stringsAsFactors=FALSE,header = FALSE)
-y_test<-read.table("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\test\\y_test.txt",stringsAsFactors=FALSE,header = FALSE)
-subject_test<-read.table("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\test\\subject_test.txt",stringsAsFactors=FALSE,header = FALSE)
+X_test<-read.table("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\test\\X_test.txt",stringsAsFactors=FALSE,header = FALSE)
+y_test<-read.table("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\test\\y_test.txt",stringsAsFactors=FALSE,header = FALSE)
+subject_test<-read.table("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\test\\subject_test.txt",stringsAsFactors=FALSE,header = FALSE)
 
 #Load training data
-X_train<-read.table("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\X_train.txt",stringsAsFactors=FALSE,header = FALSE)
-y_train<-read.table("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\y_train.txt",stringsAsFactors=FALSE,header = FALSE)
-subject_train<-read.table("M:\\SOBI\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\subject_train.txt",stringsAsFactors=FALSE,header = FALSE)
+X_train<-read.table("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\X_train.txt",stringsAsFactors=FALSE,header = FALSE)
+y_train<-read.table("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\y_train.txt",stringsAsFactors=FALSE,header = FALSE)
+subject_train<-read.table("M:\\DIRX\\R\\EXERCISES\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\subject_train.txt",stringsAsFactors=FALSE,header = FALSE)
 
 #Merging test- and train data (This is step 1.)
 full_y<-rbind(y_test,y_train)
